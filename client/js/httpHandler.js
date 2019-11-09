@@ -1,3 +1,5 @@
+
+
 (function() {
 
   const serverUrl = 'http://127.0.0.1:3000';
@@ -17,7 +19,7 @@
     $.ajax({
       type: 'POST',
       data: formData,
-      url: 'FILL_ME_IN',
+      url: serverUrl,
       cache: false,
       contentType: false,
       processData: false,
@@ -27,6 +29,26 @@
       }
     });
   };
+
+  $.ajax({
+    type: 'GET',
+    dataType: 'text',
+    url: serverUrl,
+  }).done(function (response) {
+    swimTeam.move(data);
+    console.log(response);
+  })
+
+  // var settings = {
+  //   "async": true,
+  //   "crossDomain": true,
+  //   "url": "http://127.0.0.1:3000",
+  //   "method": "GET"
+  // }
+
+  // $.ajax(settings).done(function (response) {
+  //   console.log(response);
+  // });
 
   $('form').on('submit', function(e) {
     e.preventDefault();
