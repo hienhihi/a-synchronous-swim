@@ -70,3 +70,4 @@ const SwimTeam = {
 
 };
 
+Window.swimmer = SwimTeam.move;
